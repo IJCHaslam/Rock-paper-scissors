@@ -1,6 +1,4 @@
-function game() {
-   return(playRound + playRound + playRound + playRound + playRound)
-   }
+
    let playerScore = 0
    let computerScore = 0
    let moves = ["rock", "paper", "scissors"]
