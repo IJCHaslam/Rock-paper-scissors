@@ -1,0 +1,23 @@
+body {
+    background-color: #454545;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    border: none;
+    background: none;
+    outline: none;
+    background-color: #454545;
+    cursor: pointer;
+    font-size: 10rem;
+    transition: 100ms;
+}
+
+.selection:hover {
+    transform: scale(1.1);
+    background-color: #454545;
+}
