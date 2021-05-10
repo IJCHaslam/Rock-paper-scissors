@@ -37,3 +37,13 @@ h1 {
     font-size: 35px;
 }
 
+#selection-record {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+
+.text-content {
+    display: flex;
+}
+

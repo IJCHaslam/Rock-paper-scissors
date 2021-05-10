@@ -1,3 +1,9 @@
+// Move Variables
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
 //Initial scores
 let playerScore = 0;
 let computerScore = 0;
@@ -9,25 +15,31 @@ function computerPlay() {
     return computerMoves[computerChoices];
 }
 
-// 2... Make a function that plays a single round of Rock, Paper, Scissors.
+// Function that plays a single round of Rock, Paper, Scissors.
 function playRound(playerSelection, computerSelection) {
-    console.log(`You selected: "${playerSelection}"`);
-    console.log(`Computer selected: "${computerSelection}"`);
-
+    
 //Draw
     if (playerSelection === computerSelection) {
-        console.log('Draw!')
+        document.getElementById('text-content').textContent = 'Draw!';
+        document.getElementById('player-score').textContent = playerScore;
+        document.getElementById('computer-score').textContent = computerScore;
         return;
     }
 //Player chooses Rock
     if (playerSelection === 'rock') {
         if (computerSelection === 'scissors') {
             playerScore++
-            console.log('You win! Rock beats scissors.')
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('text-content').textContent = `You win! You selected: ${playerSelection} 
+                                                                    and computer selected: ${computerSelection}.`;
             return; 
         } else {
             computerScore++
-            console.log('You lose! Paper beats Rock!')
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('text-content').textContent = `You lose! You selected: ${playerSelection} 
+                                                                    and computer selected: ${computerSelection}.`;
             return;
         }
     }
@@ -36,11 +48,17 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
             playerScore++
-            console.log('You win! Paper beats Rock.')
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('text-content').textContent = `You win! You selected: ${playerSelection} 
+                                                                    and computer selected: ${computerSelection}.`;
             return;
         } else {
             computerScore++
-            console.log('You lose! Scissors beat paper.')
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('text-content').textContent = `You lose! You selected: ${playerSelection} 
+                                                                    and computer selected: ${computerSelection}.`;
             return;
         }
     }
@@ -49,40 +67,51 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
             playerScore++
-            console.log('You win! Scissors beat Paper.')
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('text-content').textContent = `You win! You selected: ${playerSelection} 
+                                                                    and computer selected: ${computerSelection}.`;
             return;
         } else {
             computerScore++
-            console.log('You lose! Rock beats scissors.')
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('text-content').textContent = `You lose! You selected: ${playerSelection} 
+                                                                    and computer selected: ${computerSelection}.`;
             return;
         }
     }
 }
 
-// Play a game using prompt and computerPlay function
-const rock = document.getElementById("rock");
+//Event listener options
 
 rock.addEventListener('click', e => {
     playRound("rock", computerPlay())
+    if (playerScore === 5) {
+        alert("WINNER!!!!");
+        return;
+    } else if (computerScore === 5) {
+        alert("You lose :(")
+        return;
+    }
 })
-
-const paper = document.getElementById("paper");
 
 paper.addEventListener('click', e => {
     playRound("paper", computerPlay())
+    if (playerScore === 5) {
+        alert("WINNER!!!")
+    } else if (computerScore === 5) {
+        alert("You lose :(")
+        return;
+    }
 })
-
-const scissors = document.getElementById("scissors");
 
 scissors.addEventListener('click', e => {
     playRound("scissors", computerPlay())
+    if (playerScore === 5) {
+        alert("WINNER!!!")
+    } else if (computerScore === 5) {
+        alert("You lose :(")
+        return;
+    }
 })
-
-function game() {
-    const playerInput = prompt('What is your move?')
-    playRound(playerInput.toLowerCase(), computerPlay())
-    console.log(playerScore)
-    console.log(computerScore)
-    return;
-}
-
