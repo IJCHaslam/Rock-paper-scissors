@@ -60,24 +60,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Play a game using prompt and computerPlay function
-const rock = document.getElementById("rock");
-
-rock.addEventListener('click', e => {
-    playRound("rock", computerPlay())
-})
-
-const paper = document.getElementById("paper");
-
-paper.addEventListener('click', e => {
-    playRound("paper", computerPlay())
-})
-
-const scissors = document.getElementById("scissors");
-
-scissors.addEventListener('click', e => {
-    playRound("scissors", computerPlay())
-})
-
 function game() {
     const playerInput = prompt('What is your move?')
     playRound(playerInput.toLowerCase(), computerPlay())
@@ -86,3 +68,9 @@ function game() {
     return;
 }
 
+// Play 5 games in a row. 
+game()
+game()
+game()
+game()
+game()

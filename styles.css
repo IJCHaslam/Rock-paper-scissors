@@ -1,10 +1,19 @@
 body {
     background-color: #454545;
+    height: 100%;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .selections {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .selection {
@@ -21,3 +30,10 @@ body {
     transform: scale(1.1);
     background-color: #454545;
 }
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 35px;
+}
+
