@@ -88,10 +88,14 @@ function playRound(playerSelection, computerSelection) {
 rock.addEventListener('click', e => {
     playRound("rock", computerPlay())
     if (playerScore === 5) {
+        playerScore = 0;
+        computerScore = 0; 
         alert("WINNER!!!!");
         return;
     } else if (computerScore === 5) {
-        alert("You lose :(")
+        playerScore = 0;
+        computerScore = 0; 
+        alert("You lose :(");
         return;
     }
 })
@@ -99,9 +103,14 @@ rock.addEventListener('click', e => {
 paper.addEventListener('click', e => {
     playRound("paper", computerPlay())
     if (playerScore === 5) {
-        alert("WINNER!!!")
+        alert("WINNER!!!");
+        playerScore = 0;
+        computerScore = 0; 
+        return;
     } else if (computerScore === 5) {
         alert("You lose :(")
+        playerScore = 0;
+        computerScore = 0; 
         return;
     }
 })
@@ -110,8 +119,13 @@ scissors.addEventListener('click', e => {
     playRound("scissors", computerPlay())
     if (playerScore === 5) {
         alert("WINNER!!!")
+        playerScore = 0;
+        computerScore = 0; 
+        return;
     } else if (computerScore === 5) {
         alert("You lose :(")
+        playerScore = 0;
+        computerScore = 0; 
         return;
     }
 })
